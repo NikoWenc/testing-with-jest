@@ -10,3 +10,6 @@ test('Capitalized first letter', () => {
     expect(capitalized('hello')).toBe("Hello");
 });
 
+test('Reverse a string', () => {
+    expect(reverseString("hello")).toBe("olleh");
+});
