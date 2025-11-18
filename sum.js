@@ -41,7 +41,35 @@ export class Calculator {
     };
 };
 
-export function caesarCipher() {
+export function caesarCipher(str, key) {
+
+    const lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    const upper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+    let decryptedWord = '';
+
+        for (i = 0; i < str.length; i++){
+
+            if (lower.includes(str[i])){
+                // to wrap back to start of array if result is longer than the arr length
+                if (lower.indexOf(str[i]) + key > lower.length - 1) {
+                    decryptedWord = decryptedWord + lower[(lower.indexOf(str[i]) + key) - lower.length];
+                }else {
+                    decryptedWord = decryptedWord + lower[lower.indexOf(str[i]) + key];
+                };
+            };
+
+            if (upper.includes(str[i])){
+                // to wrap back to start of array if result is longer than the arr length
+                if (upper.indexOf(str[i]) + key > upper.length - 1) {
+                    decryptedWord = decryptedWord + upper[(upper.indexOf(str[i]) + key) - upper.length];
+                }else {
+                    decryptedWord = decryptedWord + upper[upper.indexOf(str[i]) + key];
+                };  
+            };
+
+        };
+        return decryptedWord;
 
 };
 
@@ -63,8 +91,6 @@ export function analyzeArray(arr){
                 };
 
             obj.min = min;
-
-            console.log(obj.min);
         };
 
     // for max
@@ -79,8 +105,6 @@ export function analyzeArray(arr){
                 };
 
             obj.max = max;
-
-            console.log(obj.max);
         };
 
     // for length

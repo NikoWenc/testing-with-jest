@@ -3,19 +3,23 @@ import { capitalized } from "./sum";
 import { reverseString } from "./sum";
 import { Calculator } from "./sum";
 import { analyzeArray } from "./sum";
+import { caesarCipher } from "./sum";
 
 test('adds 1 + 2 to equal 3', () => {
   expect(sum(1, 2)).toBe(3);
 });
 
+// capitalized test
 test('Capitalized first letter', () => {
     expect(capitalized('hello')).toBe("Hello");
 });
 
+// reverseString test
 test('Reverse a string', () => {
     expect(reverseString("hello")).toBe("olleh");
 });
 
+// Calculator test
 test('Calculator Add', () => {
     const calc = new Calculator;
     expect(calc.add(1, 2)).toBe(3);
@@ -36,6 +40,20 @@ test('Calculator Divide', () => {
     expect(calc.div(10, 2)).toBe(5);
 });
 
+// ceasarCipher test
+test("CeasarCipher", () => {
+    expect(caesarCipher('xyz', 3)).toBe('abc');
+});
+ 
+// test("CeasarCipher", () => {
+//     expect(caesarCipher('HeLLo', 3)).toBe('KhOOr');
+// });
+ 
+// test("CeasarCipher", () => {
+//     expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
+// });
+ 
+// analyzeArray test
 test("Array Average", () => {
     const object = analyzeArray([1,8,3,4,2,6]);
     expect(object.average).toBe(4);
