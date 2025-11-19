@@ -45,13 +45,13 @@ test("CeasarCipher", () => {
     expect(caesarCipher('xyz', 3)).toBe('abc');
 });
  
-// test("CeasarCipher", () => {
-//     expect(caesarCipher('HeLLo', 3)).toBe('KhOOr');
-// });
+test("CeasarCipher", () => {
+    expect(caesarCipher('HeLLo', 3)).toBe('KhOOr');
+});
  
-// test("CeasarCipher", () => {
-//     expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
-// });
+test("CeasarCipher", () => {
+    expect(caesarCipher('Hello, World!!=', 3)).toBe('Khoor, Zruog!!=');
+});
  
 // analyzeArray test
 test("Array Average", () => {

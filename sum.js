@@ -53,12 +53,15 @@ export function caesarCipher(str, key) {
             let indexOfCharLower = lower.indexOf(str[i]) + key;
             let indexOfCharUpper = upper.indexOf(str[i]) + key;
 
+            if (!lower.includes(str[i]) && !upper.includes(str[i])) 
+                    decryptedWord += str[i];
+
             if (lower.includes(str[i])){
                 // to wrap back to start of array if result is longer than the arr length
                 if (indexOfCharLower > lower.length - 1) {
                     decryptedWord = decryptedWord + lower[(indexOfCharLower) - lower.length];
                 }else {
-                    decryptedWord = decryptedWord + lower[indexOfCharLower];
+                    decryptedWord += lower[indexOfCharLower];
                 };
             };
 
@@ -67,7 +70,7 @@ export function caesarCipher(str, key) {
                 if (indexOfCharUpper > upper.length - 1) {
                     decryptedWord = decryptedWord + upper[(indexOfCharUpper) - upper.length];
                 }else {
-                    decryptedWord = decryptedWord + upper[indexOfCharUpper];
+                    decryptedWord += upper[indexOfCharUpper];
                 };  
             };
 
